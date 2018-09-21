@@ -18,7 +18,7 @@ export function request({ url, method, body }) {
     },
   };
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     fetch(url, init)
       .then(status)
       .then(json)
@@ -31,32 +31,4 @@ export const get = (requestUrl, id = null, params = {}) =>
     url: id ? `${requestUrl}/${id}` : requestUrl,
     method: 'get',
     params,
-  });
-
-export const post = (requestUrl, payload = {}) =>
-  request({
-    url: requestUrl,
-    method: 'post',
-    body: payload,
-  });
-
-export const patch = (requestUrl, payload = {}) =>
-  request({
-    url: requestUrl,
-    method: 'put',
-    body: payload,
-  });
-
-export const put = (requestUrl, id, payload = {}) =>
-  request({
-    url: `${requestUrl}/${id}`,
-    method: 'put',
-    body: payload,
-  });
-
-export const remove = (requestUrl, id) =>
-  request({
-    url: `${requestUrl}/${id}`,
-    method: 'delete',
-    id,
   });
