@@ -8,5 +8,5 @@ export const DefaultRoutes = [
     component: Dashboard,
     exact: true,
     wrapper: DefaultLayout,
-  }
+  },
 ];
